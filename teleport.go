@@ -7,6 +7,7 @@ import (
 
 	"github.com/codegangsta/cli"
 	"github.com/marcinwyszynski/tcproxy"
+	"github.com/mgutz/ansi"
 )
 
 func handleConn(local net.Conn, remoteAddr string) {
@@ -14,7 +15,7 @@ func handleConn(local net.Conn, remoteAddr string) {
 	if err != nil {
 		fmt.Fprintf(
 			os.Stderr,
-			"error connecting to remote host %s: %v\n",
+			"Error connecting to remote host %s: %v\n",
 			remoteAddr,
 			err,
 		)
@@ -24,6 +25,12 @@ func handleConn(local net.Conn, remoteAddr string) {
 }
 
 func serve(ctx *cli.Context) {
+	fmt.Fprintln(
+		os.Stderr,
+		"Made with",
+		ansi.Color("<3", "red"),
+		"by codequest.com",
+	)
 	remoteAddr, localPort := ctx.String("remote"), ctx.Int("port")
 	fmt.Fprintf(
 		os.Stderr,
@@ -45,7 +52,7 @@ func serve(ctx *cli.Context) {
 		if err != nil {
 			fmt.Fprintf(
 				os.Stderr,
-				"error accepting incoming connection: %v\n",
+				"Error accepting incoming connection: %v\n",
 				err,
 			)
 			os.Exit(2)
