@@ -19,4 +19,4 @@ Now for as long as this is running _Developer B_ can access localhost:3000 local
 Of course nothing requires you to use teleport _only_ with ngrok - teleport will work standalone just fine so you can connect to a server running on your VPS as long as you can access it from your local machine.
 
 # Installing
-If you have Go installed on your system you can use Go's package manager to install the newest version binary by running `go get -u github.com/codequest-eu/telelport`. Otherwise there are pre-built binaries available from the [Releases](https://github.com/codequest-eu/teleport/releases) page.
+If you have Go installed on your system you can use Go's package manager to install the newest version binary by running `go get -u github.com/codequest-eu/telelport`. Otherwise there are pre-built binaries for the plaftorm of your choice available [here](https://gobuilder.me/github.com/codequest-eu/teleport).
